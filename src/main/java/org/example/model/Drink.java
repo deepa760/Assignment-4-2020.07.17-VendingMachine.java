@@ -6,7 +6,8 @@ public class Drink extends Product {
     private String taste;
     private String packaging;
 
-    public Drink(int id, String name, int price, int volume, boolean carbonated, String taste, String packaging) {
+    public Drink(int id, String name, int price, int volume, boolean carbonated, String taste,
+                 String packaging) {
         super(id, name, price);
         this.volume = volume;
         this.carbonated = carbonated;
@@ -24,7 +25,7 @@ public class Drink extends Product {
 
     @Override
     public String Use() {
-        return "Drinking " + super.getName() +" *slurp slurp*";
+        return "Drinking " + super.getName() +"tasty";
     }
 
     @Override
