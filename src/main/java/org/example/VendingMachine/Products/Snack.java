@@ -9,11 +9,9 @@ public class Snack extends Product{
         this.weight = weight;
     }
 
-
-
     @Override
     public String toString() {
-        return 	super.getPlaceId() + "\t \t" + super.getName() + "\t" + weight + "\t" + super.getPrice() + " Sek";
+        return 	super.getPlaceId() + "\t \t" + getName() + "\t" + weight + "\t" + super.getPrice() + " Sek";
     }
 
 
@@ -35,4 +33,11 @@ public class Snack extends Product{
         return null;
     }
 
+    public String getWeight() {
+        return weight;
+    }
+
+    public void setWeight(String weight) {
+        this.weight = weight;
+    }
 }
