@@ -4,37 +4,34 @@ package org.example.VendingMachine.Products;
 //#Using the Abstract class
 
 public abstract class Product {
-    protected int placeId;
-    protected String name;
-    protected int price;
 
-    public Product(int placeId, String name, int price) {
-        this.placeId = placeId;
+    private String name;
+    private int price;
+    public Product(String name, int price) {
         this.name = name;
         this.price = price;
     }
+    abstract String examine();
+    public Product purchase(int money) {
 
+        if(getPrice() > money) {
+            return null;
+        }else {
+            return this;
+        }
+    }
+
+    abstract void use();
     public String getName() {
         return name;
     }
-
     public int getPrice() {
         return price;
     }
-
-    public int getPlaceId() {
-        return placeId;
+    public void setName(String name) {
+        this.name = name;
     }
-
-    public void setPlaceId(int placeId) {
-        this.placeId = placeId;
+    public void setPrice(int price) {
+        this.price = price;
     }
-
-
-//Abstract methods
-    public abstract String examine();
-
-    public abstract void use();
-
-    abstract Product purchase(int money);
 }

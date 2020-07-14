@@ -1,43 +1,33 @@
 package org.example.VendingMachine.Products;
 
 
-public class Snack extends Product{
-    private String weight;
+public class Snack extends Product {
 
-    public Snack(int placeId, String name, int price, String weight) {
-        super(placeId, name, price);
-        this.weight = weight;
-    }
-
-    @Override
-    public String toString() {
-        return 	super.getPlaceId() + "\t \t" + getName() + "\t" + weight + "\t" + super.getPrice() + " Sek";
+    private int sugarPercent;
+    public Snack(String name, int price, int sugarPercent) {
+        super(name, price);
+        this.sugarPercent = sugarPercent;
     }
 
 
+
     @Override
-    public String examine() {
-        return "\nExamine: " + super.getName() +  "\t \t" + super.getPrice() + " Sek";
+    String examine() {
+        return getName() + " " + getSugarPercent() + " " + getPrice();
     }
 
 
     @Override
     public void use() {
-        System.out.println("\nEating my " + super.getName());
+        System.out.println("No more sugarcravings for you!");
+
     }
 
-
-    @Override
-    Product purchase(int money) {
-
-        return null;
+    public int getSugarPercent() {
+        return sugarPercent;
     }
 
-    public String getWeight() {
-        return weight;
-    }
-
-    public void setWeight(String weight) {
-        this.weight = weight;
+    public void setSugarPercent(int sugarPercent) {
+        this.sugarPercent = sugarPercent;
     }
 }
